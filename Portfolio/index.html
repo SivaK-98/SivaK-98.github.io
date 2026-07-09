@@ -59,7 +59,6 @@
       --font-display: 'Boska', 'Georgia', serif;
       --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
     }
-
     [data-theme="dark"] {
       --color-bg: #151412;
       --color-surface: #1b1a18;
@@ -81,7 +80,6 @@
       --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.28);
       --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.42);
     }
-
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
         --color-bg: #151412;
@@ -102,7 +100,6 @@
         --color-success: #88b96b;
       }
     }
-
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -123,436 +120,70 @@
     h1, h2, h3, h4 { margin: 0; line-height: 1.08; }
     button { font: inherit; }
     ::selection { background: color-mix(in srgb, var(--color-primary) 24%, transparent); }
-    :focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 3px;
-      border-radius: var(--radius-sm);
-    }
-
-    .skip-link {
-      position: absolute;
-      left: var(--space-4);
-      top: -3rem;
-      background: var(--color-primary);
-      color: var(--color-text-inverse);
-      padding: var(--space-3) var(--space-4);
-      border-radius: var(--radius-full);
-      z-index: 100;
-      transition: top var(--transition);
-    }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    .skip-link { position: absolute; left: var(--space-4); top: -3rem; background: var(--color-primary); color: var(--color-text-inverse); padding: var(--space-3) var(--space-4); border-radius: var(--radius-full); z-index: 100; transition: top var(--transition); }
     .skip-link:focus { top: var(--space-4); }
-
-    .shell {
-      width: min(calc(100% - 2rem), var(--content));
-      margin: 0 auto;
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: color-mix(in srgb, var(--color-bg) 82%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-      padding: var(--space-4) 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      min-width: 0;
-    }
-
-    .logo {
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 0.9rem;
-      background: linear-gradient(135deg, var(--color-primary), color-mix(in srgb, var(--color-blue) 55%, var(--color-primary)));
-      color: white;
-      display: grid;
-      place-items: center;
-      box-shadow: var(--shadow-md);
-      flex: none;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: var(--text-sm);
-      letter-spacing: 0.04em;
-    }
-
-    .brand-text span {
-      display: block;
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-
-    .theme-toggle, .resume-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 44px;
-      min-height: 44px;
-      border-radius: var(--radius-full);
-      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
-      background: color-mix(in srgb, var(--color-surface) 85%, transparent);
-      color: var(--color-text);
-      transition: transform var(--transition), background var(--transition), border-color var(--transition);
-    }
-
-    .resume-link {
-      padding: 0 var(--space-5);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      gap: var(--space-2);
-    }
-
-    .theme-toggle:hover, .resume-link:hover {
-      transform: translateY(-1px);
-      background: var(--color-surface-2);
-      border-color: color-mix(in srgb, var(--color-primary) 26%, var(--color-border));
-    }
-
+    .shell { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
+    .header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(16px); background: color-mix(in srgb, var(--color-bg) 82%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) 0; }
+    .brand { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+    .logo { width: 3rem; height: 3rem; border-radius: 50%; overflow: hidden; background: color-mix(in srgb, var(--color-primary-highlight) 88%, transparent); border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent); box-shadow: var(--shadow-md); flex: none; }
+    .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .brand-text strong { display: block; font-size: var(--text-sm); letter-spacing: 0.04em; }
+    .brand-text span { display: block; font-size: var(--text-xs); color: var(--color-text-muted); }
+    .header-actions { display: flex; align-items: center; gap: var(--space-3); }
+    .theme-toggle, .resume-link { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: var(--radius-full); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); background: color-mix(in srgb, var(--color-surface) 85%, transparent); color: var(--color-text); transition: transform var(--transition), background var(--transition), border-color var(--transition); }
+    .resume-link { padding: 0 var(--space-5); font-size: var(--text-sm); font-weight: 600; gap: var(--space-2); }
+    .theme-toggle:hover, .resume-link:hover { transform: translateY(-1px); background: var(--color-surface-2); border-color: color-mix(in srgb, var(--color-primary) 26%, var(--color-border)); }
     main { padding: var(--space-10) 0 var(--space-20); }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.35fr 0.9fr;
-      gap: var(--space-8);
-      align-items: end;
-      min-height: 74vh;
-      padding: clamp(var(--space-8), 6vw, var(--space-16)) 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: 0.45rem 0.85rem;
-      border-radius: var(--radius-full);
-      border: 1px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
-      background: color-mix(in srgb, var(--color-primary-highlight) 75%, transparent);
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: var(--space-5);
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      letter-spacing: -0.03em;
-      max-width: 11ch;
-    }
-
-    .hero .subtitle {
-      margin-top: var(--space-5);
-      font-size: var(--text-lg);
-      max-width: 42ch;
-      color: var(--color-text);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-3);
-      margin-top: var(--space-8);
-    }
-
-    .contact-card {
-      padding: var(--space-4);
-      background: color-mix(in srgb, var(--color-surface) 90%, transparent);
-      border: 1px solid color-mix(in srgb, var(--color-text) 9%, transparent);
-      border-radius: var(--radius-lg);
-      min-height: 100%;
-    }
-
-    .contact-card span {
-      display: block;
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: var(--space-2);
-    }
-
-    .hero-panel {
-      position: relative;
-      padding: var(--space-8);
-      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 95%, transparent), color-mix(in srgb, var(--color-surface-offset) 95%, transparent));
-      border: 1px solid color-mix(in srgb, var(--color-text) 9%, transparent);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    .hero-panel::before {
-      content: "";
-      position: absolute;
-      inset: auto -20% -35% auto;
-      width: 16rem;
-      aspect-ratio: 1;
-      background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 25%, transparent), transparent 70%);
-      z-index: -1;
-    }
-
-    .metric {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-4);
-      margin-top: var(--space-6);
-    }
-
-    .metric div {
-      padding-top: var(--space-4);
-      border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: var(--text-xl);
-      color: var(--color-text);
-    }
-
-    .metric span {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-
-    .section {
-      padding: clamp(var(--space-10), 8vw, var(--space-20)) 0 0;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: var(--space-6);
-      align-items: end;
-      margin-bottom: var(--space-8);
-    }
-
-    .section-kicker {
-      color: var(--color-primary);
-      font-size: var(--text-xs);
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      margin-bottom: var(--space-3);
-    }
-
-    .section h2 {
-      font-size: var(--text-xl);
-      font-family: var(--font-display);
-      letter-spacing: -0.02em;
-    }
-
-    .summary-card, .project-card, .award-strip, .edu-card, .cert-card, .skill-group, .timeline-card {
-      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-      border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .summary-card {
-      padding: var(--space-8);
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: var(--space-8);
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-      align-content: start;
-    }
-
-    .chip {
-      display: inline-flex;
-      padding: 0.55rem 0.9rem;
-      border-radius: var(--radius-full);
-      background: color-mix(in srgb, var(--color-primary-highlight) 85%, transparent);
-      color: var(--color-primary);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    .skills-grid, .cert-grid, .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-5);
-    }
-
-    .skill-group, .cert-card, .edu-card {
-      padding: var(--space-6);
-    }
-
-    .skill-group h3, .timeline-card h3, .project-card h3, .cert-card h3, .edu-card h3 {
-      font-size: var(--text-lg);
-      margin-bottom: var(--space-3);
-    }
-
-    .skill-list, .bullet-list {
-      display: grid;
-      gap: var(--space-2);
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-    }
-
+    .hero { display: grid; grid-template-columns: 1.35fr 0.9fr; gap: var(--space-8); align-items: end; min-height: 74vh; padding: clamp(var(--space-8), 6vw, var(--space-16)) 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: var(--space-2); padding: 0.45rem 0.85rem; border-radius: var(--radius-full); border: 1px solid color-mix(in srgb, var(--color-primary) 22%, transparent); background: color-mix(in srgb, var(--color-primary-highlight) 75%, transparent); font-size: var(--text-xs); color: var(--color-primary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-5); }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 5.5rem); letter-spacing: -0.03em; max-width: 11ch; }
+    .hero .subtitle { margin-top: var(--space-5); font-size: var(--text-lg); max-width: 42ch; color: var(--color-text); }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-8); }
+    .contact-card { padding: var(--space-4); background: color-mix(in srgb, var(--color-surface) 90%, transparent); border: 1px solid color-mix(in srgb, var(--color-text) 9%, transparent); border-radius: var(--radius-lg); min-height: 100%; }
+    .contact-card span { display: block; font-size: var(--text-xs); color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-2); }
+    .hero-panel { position: relative; padding: var(--space-8); background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 95%, transparent), color-mix(in srgb, var(--color-surface-offset) 95%, transparent)); border: 1px solid color-mix(in srgb, var(--color-text) 9%, transparent); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; isolation: isolate; }
+    .hero-panel::before { content: ""; position: absolute; inset: auto -20% -35% auto; width: 16rem; aspect-ratio: 1; background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 25%, transparent), transparent 70%); z-index: -1; }
+    .metric { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+    .metric div { padding-top: var(--space-4); border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); }
+    .metric strong { display: block; font-size: var(--text-xl); color: var(--color-text); }
+    .metric span { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .section { padding: clamp(var(--space-10), 8vw, var(--space-20)) 0 0; }
+    .section-head { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--space-6); align-items: end; margin-bottom: var(--space-8); }
+    .section-kicker { color: var(--color-primary); font-size: var(--text-xs); letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: var(--space-3); }
+    .section h2 { font-size: var(--text-xl); font-family: var(--font-display); letter-spacing: -0.02em; }
+    .summary-card, .project-card, .award-strip, .edu-card, .cert-card, .skill-group, .timeline-card { background: color-mix(in srgb, var(--color-surface) 92%, transparent); border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); }
+    .summary-card { padding: var(--space-8); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-8); }
+    .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); align-content: start; }
+    .chip { display: inline-flex; padding: 0.55rem 0.9rem; border-radius: var(--radius-full); background: color-mix(in srgb, var(--color-primary-highlight) 85%, transparent); color: var(--color-primary); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.04em; }
+    .skills-grid, .cert-grid, .education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+    .skill-group, .cert-card, .edu-card { padding: var(--space-6); }
+    .skill-group h3, .timeline-card h3, .project-card h3, .cert-card h3, .edu-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-3); }
+    .skill-list, .bullet-list { display: grid; gap: var(--space-2); padding: 0; margin: 0; list-style: none; color: var(--color-text-muted); font-size: var(--text-sm); }
     .skill-list li, .bullet-list li { position: relative; padding-left: 1rem; }
-    .skill-list li::before, .bullet-list li::before {
-      content: "";
-      width: 0.42rem;
-      height: 0.42rem;
-      border-radius: 50%;
-      position: absolute;
-      left: 0;
-      top: 0.6rem;
-      background: var(--color-primary);
-    }
-
-    .timeline {
-      display: grid;
-      gap: var(--space-5);
-    }
-
-    .timeline-card {
-      padding: var(--space-8);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .timeline-card::after {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 0.35rem;
-      background: linear-gradient(180deg, var(--color-primary), color-mix(in srgb, var(--color-blue) 55%, var(--color-primary)));
-    }
-
-    .timeline-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: var(--space-3);
-      margin-bottom: var(--space-4);
-      padding-left: var(--space-4);
-    }
-
-    .role {
-      font-size: var(--text-sm);
-      color: var(--color-primary);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: var(--space-2);
-      display: block;
-    }
-
-    .timeline-meta {
-      font-size: var(--text-sm);
-      color: var(--color-text-faint);
-      white-space: nowrap;
-    }
-
+    .skill-list li::before, .bullet-list li::before { content: ""; width: 0.42rem; height: 0.42rem; border-radius: 50%; position: absolute; left: 0; top: 0.6rem; background: var(--color-primary); }
+    .timeline { display: grid; gap: var(--space-5); }
+    .timeline-card { padding: var(--space-8); position: relative; overflow: hidden; }
+    .timeline-card::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 0.35rem; background: linear-gradient(180deg, var(--color-primary), color-mix(in srgb, var(--color-blue) 55%, var(--color-primary))); }
+    .timeline-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-4); padding-left: var(--space-4); }
+    .role { font-size: var(--text-sm); color: var(--color-primary); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--space-2); display: block; }
+    .timeline-meta { font-size: var(--text-sm); color: var(--color-text-faint); white-space: nowrap; }
     .timeline-card p, .timeline-card ul { margin-left: var(--space-4); }
-
-    .project-card {
-      padding: var(--space-8);
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: var(--space-8);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 auto;
-      width: 18rem;
-      height: 18rem;
-      background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 14%, transparent), transparent 70%);
-      pointer-events: none;
-    }
-
-    .project-label {
-      display: inline-flex;
-      margin-bottom: var(--space-4);
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .award-strip {
-      padding: var(--space-8);
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-5);
-    }
-
-    .award-strip h3 {
-      font-size: var(--text-base);
-      margin-bottom: var(--space-3);
-    }
-
-    .footer {
-      padding: var(--space-16) 0 var(--space-8);
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .project-card { padding: var(--space-8); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-8); overflow: hidden; position: relative; }
+    .project-card::before { content: ""; position: absolute; inset: auto 0 0 auto; width: 18rem; height: 18rem; background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 14%, transparent), transparent 70%); pointer-events: none; }
+    .project-label { display: inline-flex; margin-bottom: var(--space-4); font-size: var(--text-xs); color: var(--color-primary); letter-spacing: 0.08em; text-transform: uppercase; }
+    .award-strip { padding: var(--space-8); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+    .award-strip h3 { font-size: var(--text-base); margin-bottom: var(--space-3); }
+    .footer { padding: var(--space-16) 0 var(--space-8); color: var(--color-text-muted); font-size: var(--text-sm); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
     @media (max-width: 980px) {
-      .hero,
-      .summary-card,
-      .section-head,
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      .award-strip,
-      .skills-grid,
-      .cert-grid,
-      .education-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .hero, .summary-card, .section-head, .project-card { grid-template-columns: 1fr; }
+      .award-strip, .skills-grid, .cert-grid, .education-grid, .contact-grid { grid-template-columns: 1fr; }
       .hero { min-height: auto; }
       .hero h1 { max-width: none; }
     }
-
     @media (max-width: 640px) {
       .header-inner { align-items: flex-start; }
       .header-actions { width: 100%; justify-content: flex-end; }
@@ -563,7 +194,6 @@
       .metric { grid-template-columns: 1fr 1fr; }
       .resume-link span { display: none; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -573,16 +203,11 @@
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
-
   <header class="header">
     <div class="shell header-inner">
       <div class="brand" aria-label="Sivasubramaniyan K brand">
-      
-        <div class="logo" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 20.5L14 7.5L21 20.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10.8 16.2H17.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-          </svg>
+        <div class="logo">
+          <img src="https://raw.githubusercontent.com/SivaK-98/SivaK-98.github.io/master/Portfolio/assets/img/profile-img.jpg" alt="Portrait of Sivasubramaniyan K" width="160" height="160" loading="eager" decoding="async" />
         </div>
         <div class="brand-text">
           <strong>Sivasubramaniyan K</strong>
@@ -590,14 +215,11 @@
         </div>
       </div>
       <div class="header-actions">
-        <a class="resume-link" href="mailto:sivasubramaniyan.k.1998@gmail.com" aria-label="Email Sivasubramaniyan K">
-          <span>Get in touch</span>
-        </a>
+        <a class="resume-link" href="mailto:sivasubramaniyan.k.1998@gmail.com" aria-label="Email Sivasubramaniyan K"><span>Get in touch</span></a>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
       </div>
     </div>
   </header>
-
   <main id="content" class="shell">
     <section class="hero reveal">
       <div>
@@ -605,349 +227,51 @@
         <h1>Sivasubramaniyan K</h1>
         <p class="subtitle">Senior Site Reliability Engineer with 7+ years across AdTech, cloud security, and global e-commerce, focused on resilient platforms, automation, observability, and production excellence.</p>
         <div class="contact-grid" aria-label="Contact details">
-          <a class="contact-card" href="tel:+919500870146">
-            <span>Phone</span>
-            <strong>+91 9500870146</strong>
-          </a>
-          <a class="contact-card" href="mailto:sivasubramaniyan.k.1998@gmail.com">
-            <span>Email</span>
-            <strong>sivasubramaniyan.k.1998@gmail.com</strong>
-          </a>
-          <a class="contact-card" href="http://linkedin.com/in/sivasubramaniyan-k-may8" target="_blank" rel="noopener noreferrer">
-            <span>LinkedIn</span>
-            <strong>linkedin.com/in/sivasubramaniyan-k-may8</strong>
-          </a>
-          <div class="contact-card">
-            <span>Focus areas</span>
-            <strong>AWS · Kubernetes · Terraform · Python</strong>
-          </div>
+          <a class="contact-card" href="tel:+919500870146"><span>Phone</span><strong>+91 9500870146</strong></a>
+          <a class="contact-card" href="mailto:sivasubramaniyan.k.1998@gmail.com"><span>Email</span><strong>sivasubramaniyan.k.1998@gmail.com</strong></a>
+          <a class="contact-card" href="http://linkedin.com/in/sivasubramaniyan-k-may8" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/sivasubramaniyan-k-may8</strong></a>
+          <div class="contact-card"><span>Focus areas</span><strong>AWS · Kubernetes · Terraform · Python</strong></div>
         </div>
       </div>
-
       <aside class="hero-panel" aria-label="Career highlights">
         <div class="section-kicker">Snapshot</div>
         <h2>Operations leader for high-scale production systems.</h2>
         <p style="margin-top: var(--space-4);">Experienced in incident response, production support, cloud governance, automation, chaos engineering, and release reliability for platforms that cannot afford downtime.</p>
         <div class="metric" aria-label="Key metrics">
-          <div>
-            <strong>7+</strong>
-            <span>Years in production engineering</span>
-          </div>
-          <div>
-            <strong>3</strong>
-            <span>Major domains: E-Commerce, Cloud Security, AdTech</span>
-          </div>
-          <div>
-            <strong>24×7</strong>
-            <span>On-call, incident handling, and release support</span>
-          </div>
-          <div>
-            <strong>Multi-cloud</strong>
-            <span>AWS, OCI, Azure, GCP exposure</span>
-          </div>
+          <div><strong>7+</strong><span>Years in production engineering</span></div>
+          <div><strong>3</strong><span>Major domains: E-Commerce, Cloud Security, AdTech</span></div>
+          <div><strong>24×7</strong><span>On-call, incident handling, and release support</span></div>
+          <div><strong>Multi-cloud</strong><span>AWS, OCI, Azure, GCP exposure</span></div>
         </div>
       </aside>
     </section>
-
-    <section class="section reveal" id="summary">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Profile</div>
-          <h2>Professional summary</h2>
-        </div>
-        <p>Site Reliability Engineer with deep hands-on experience building highly available systems, automating infrastructure operations, and improving service reliability through proactive monitoring, governance, and scalable engineering practices.</p>
-      </div>
-
-      <div class="summary-card">
-        <div>
-          <p style="color: var(--color-text); font-size: var(--text-lg); margin-bottom: var(--space-4);">From live sporting events and ad-serving traffic to cloud security scanning and global e-commerce stability, the work has centered on keeping critical services healthy under pressure.</p>
-          <p>Core strengths include AWS infrastructure, Kubernetes operations, Docker, Terraform, Linux administration, CI/CD execution, observability, incident management, Root Cause Analysis, and reliability-focused automation using Python and Bash.</p>
-        </div>
-        <div class="chips" aria-label="Core capability chips">
-          <span class="chip">Site Reliability Engineering</span>
-          <span class="chip">DevOps</span>
-          <span class="chip">Cloud Infrastructure</span>
-          <span class="chip">Production Support</span>
-          <span class="chip">Incident Management</span>
-          <span class="chip">AWS Governance</span>
-          <span class="chip">Infrastructure as Code</span>
-          <span class="chip">Observability</span>
-          <span class="chip">Chaos Engineering</span>
-          <span class="chip">Performance & Cost Optimization</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="experience">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Journey</div>
-          <h2>Professional experience</h2>
-        </div>
-        <p>A progression from production support into senior reliability engineering, with growing ownership across deployments, infrastructure automation, cloud operations, incident command, and team leadership.</p>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-card">
-          <div class="timeline-top">
-            <div>
-              <span class="role">Comcast / FreeWheel</span>
-              <h3>Engineer 3 — Site Reliability Engineer</h3>
-            </div>
-            <div class="timeline-meta">2024 — Present</div>
-          </div>
-          <p>Supporting Comcast FreeWheel's premium AdTech platform with responsibility for mission-critical ad-serving availability, live-event readiness, AWS and Kubernetes operations, governance, release execution, and reliability improvement.</p>
-          <ul class="bullet-list" style="margin-top: var(--space-5);">
-            <li>Supported major live events including the Olympics, FIFA World Cup, and March Madness with proactive monitoring and capacity planning.</li>
-            <li>Managed AWS infrastructure, Kubernetes production clusters, deployments, rollbacks, hotfixes, and CI/CD-driven release workflows.</li>
-            <li>Drove tagging, cost optimization, security compliance, Terraform maintenance, and contributions to chaos engineering initiatives.</li>
-          </ul>
-        </article>
-
-        <article class="timeline-card">
-          <div class="timeline-top">
-            <div>
-              <span class="role">iOPEX Technologies · Client: Netskope</span>
-              <h3>Senior Systems Engineer → Shift Lead · Site Reliability Engineer</h3>
-            </div>
-            <div class="timeline-meta">2022 — 2024</div>
-          </div>
-          <p>Owned infrastructure and application reliability for Netskope Introspection, a cloud security platform performing API-driven content scanning, DLP, and risk analysis across enterprise SaaS environments.</p>
-          <ul class="bullet-list" style="margin-top: var(--space-5);">
-            <li>Executed deployments, upgrades, maintenance, patching, and automation using Python and Bash.</li>
-            <li>Managed Kubernetes, Docker, Redis, Kafka, and MongoDB production workloads across multiple environments.</li>
-            <li>Led incident management, SLA-bound troubleshooting, post-incident reviews, on-call operations through Opsgenie, and shift-level coordination.</li>
-          </ul>
-        </article>
-
-        <article class="timeline-card">
-          <div class="timeline-top">
-            <div>
-              <span class="role">Tata Consultancy Services · Client: HP Inc.</span>
-              <h3>Assistant System Engineer Trainee → System Engineer · Production Support Engineer</h3>
-            </div>
-            <div class="timeline-meta">2019 — 2022</div>
-          </div>
-          <p>Maintained stability and availability for HP's global B2C e-commerce platform, supporting infrastructure changes, deployments, migrations, and business-critical seasonal traffic events.</p>
-          <ul class="bullet-list" style="margin-top: var(--space-5);">
-            <li>Handled production monitoring, incident resolution, OS patching, server migration, deployments, and service continuity work.</li>
-            <li>Supported high-volume promotional periods while preserving platform stability and response standards.</li>
-            <li>Automated repetitive operational tasks and partnered with cross-functional teams on RCA and operational efficiency improvements.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="skills">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Capability stack</div>
-          <h2>Technical skills</h2>
-        </div>
-        <p>Balanced across cloud, infrastructure, automation, runtime operations, observability, and cross-functional production support.</p>
-      </div>
-
-      <div class="skills-grid">
-        <article class="skill-group">
-          <h3>Cloud & infrastructure</h3>
-          <ul class="skill-list">
-            <li>AWS, OCI, Azure, GCP</li>
-            <li>Linux: RHEL, Amazon Linux, Ubuntu</li>
-            <li>Terraform, Ansible, cloud governance</li>
-            <li>High availability, scalability, cost optimization</li>
-          </ul>
-        </article>
-        <article class="skill-group">
-          <h3>Platform engineering</h3>
-          <ul class="skill-list">
-            <li>Kubernetes and Docker</li>
-            <li>Jenkins, Git, CI/CD pipelines</li>
-            <li>Python 3.x and Bash automation</li>
-            <li>Infrastructure as Code and release engineering</li>
-          </ul>
-        </article>
-        <article class="skill-group">
-          <h3>Data & messaging</h3>
-          <ul class="skill-list">
-            <li>Oracle SQL, MongoDB, Redis</li>
-            <li>Apache Kafka</li>
-            <li>Performance troubleshooting and operational support</li>
-            <li>Production-grade maintenance and upgrades</li>
-          </ul>
-        </article>
-        <article class="skill-group">
-          <h3>Reliability & operations</h3>
-          <ul class="skill-list">
-            <li>Grafana, New Relic, Splunk</li>
-            <li>JIRA, ServiceNow, Opsgenie</li>
-            <li>Incident management, RCA, production support</li>
-            <li>Observability, capacity planning, chaos engineering</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="project">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Featured project</div>
-          <h2>RIS — Reliability Intelligence System</h2>
-        </div>
-        <p>An agentic AI-driven platform concept for infrastructure monitoring, incident diagnosis, remediation, and self-healing operations built around production reliability use cases.</p>
-      </div>
-
-      <article class="project-card">
-        <div>
-          <span class="project-label">Agentic AI · Monitoring · Self-healing</span>
-          <h3>Reliability operations with diagnosis and action built in.</h3>
-          <p style="margin-top: var(--space-4);">RIS was designed to automate infrastructure monitoring, intelligent incident detection, log analysis, root cause identification, knowledge retrieval, and remediation workflows, reducing manual triage effort and improving mean time to resolution.</p>
-        </div>
-        <div class="chips" style="align-content: start;">
-          <span class="chip">AI-driven monitoring</span>
-          <span class="chip">Incident detection</span>
-          <span class="chip">Automated log analysis</span>
-          <span class="chip">Root cause identification</span>
-          <span class="chip">Troubleshooting knowledge retrieval</span>
-          <span class="chip">Automated remediation</span>
-          <span class="chip">Self-healing workflows</span>
-          <span class="chip">MTTR improvement</span>
-        </div>
-      </article>
-    </section>
-
-    <section class="section reveal" id="certifications">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Learning & validation</div>
-          <h2>Certifications</h2>
-        </div>
-        <p>Continuous upskilling across cloud architecture, automation, scripting, containers, and AdTech domain knowledge.</p>
-      </div>
-
-      <div class="cert-grid">
-        <article class="cert-card">
-          <h3>Cloud</h3>
-          <ul class="skill-list">
-            <li>AWS Solution Architect Professional — In Progress</li>
-            <li>OCI Architect Associate</li>
-            <li>Microsoft Azure Fundamentals</li>
-          </ul>
-        </article>
-        <article class="cert-card">
-          <h3>DevOps & automation</h3>
-          <ul class="skill-list">
-            <li>Kubernetes & Docker</li>
-            <li>Bash Scripting & Shell Programming</li>
-            <li>Python Zero to Master</li>
-            <li>Manage AWS using Python (Boto3): Core Services</li>
-            <li>Web Scraping & API Fundamentals in Python</li>
-          </ul>
-        </article>
-        <article class="cert-card">
-          <h3>AdTech Academy</h3>
-          <ul class="skill-list">
-            <li>Brand Safety, Campaign Management, Cookies</li>
-            <li>Identity, key regulations, and AdTech terminology</li>
-            <li>OpenRTB, Prebid, and Supply Chain concepts</li>
-          </ul>
-        </article>
-        <article class="cert-card">
-          <h3>Framework exposure</h3>
-          <ul class="skill-list">
-            <li>Basic Flask, HTML, CSS</li>
-            <li>Tkinter and Kivy exposure</li>
-            <li>Useful for internal tooling and lightweight interfaces</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="recognition">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Recognition</div>
-          <h2>Awards & recognitions</h2>
-        </div>
-        <p>Recognition across each stage of the career for delivery, ownership, performance, and operational impact.</p>
-      </div>
-
-      <div class="award-strip">
-        <article>
-          <h3>Comcast</h3>
-          <ul class="skill-list">
-            <li>Pinnacle Award</li>
-            <li>HiFi Award</li>
-          </ul>
-        </article>
-        <article>
-          <h3>iOPEX Technologies</h3>
-          <ul class="skill-list">
-            <li>Star of the Month — 3 times</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Tata Consultancy Services</h3>
-          <ul class="skill-list">
-            <li>On-the-Spot Award — 3 times</li>
-            <li>Star Team Award</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reveal" id="education">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Academic foundation</div>
-          <h2>Education</h2>
-        </div>
-        <p>A strong academic base backed by consistent performance through engineering and school education.</p>
-      </div>
-
-      <div class="education-grid">
-        <article class="edu-card">
-          <h3>B.Tech — Electrical & Electronics Engineering</h3>
-          <p style="color: var(--color-text);">Sri Manakula Vinayagar Engineering College</p>
-          <p style="margin-top: var(--space-2);">CGPA: 8.3 / 10 · 2015 — 2019</p>
-        </article>
-        <article class="edu-card">
-          <h3>Higher Secondary Certificate</h3>
-          <p style="color: var(--color-text);">New Modern Vidhya Mandir Higher Secondary School</p>
-          <p style="margin-top: var(--space-2);">Score: 89.08% · 2014 — 2015</p>
-        </article>
-        <article class="edu-card" style="grid-column: 1 / -1;">
-          <h3>Secondary School Leaving Certificate</h3>
-          <p style="color: var(--color-text);">New Modern Vidhya Mandir Higher Secondary School</p>
-          <p style="margin-top: var(--space-2);">Score: 92.2% · 2012 — 2013</p>
-        </article>
-      </div>
-    </section>
+    <section class="section reveal" id="summary"><div class="section-head"><div><div class="section-kicker">Profile</div><h2>Professional summary</h2></div><p>Site Reliability Engineer with deep hands-on experience building highly available systems, automating infrastructure operations, and improving service reliability through proactive monitoring, governance, and scalable engineering practices.</p></div><div class="summary-card"><div><p style="color: var(--color-text); font-size: var(--text-lg); margin-bottom: var(--space-4);">From live sporting events and ad-serving traffic to cloud security scanning and global e-commerce stability, the work has centered on keeping critical services healthy under pressure.</p><p>Core strengths include AWS infrastructure, Kubernetes operations, Docker, Terraform, Linux administration, CI/CD execution, observability, incident management, Root Cause Analysis, and reliability-focused automation using Python and Bash.</p></div><div class="chips" aria-label="Core capability chips"><span class="chip">Site Reliability Engineering</span><span class="chip">DevOps</span><span class="chip">Cloud Infrastructure</span><span class="chip">Production Support</span><span class="chip">Incident Management</span><span class="chip">AWS Governance</span><span class="chip">Infrastructure as Code</span><span class="chip">Observability</span><span class="chip">Chaos Engineering</span><span class="chip">Performance & Cost Optimization</span></div></div></section>
+    <section class="section reveal" id="experience"><div class="section-head"><div><div class="section-kicker">Journey</div><h2>Professional experience</h2></div><p>A progression from production support into senior reliability engineering, with growing ownership across deployments, infrastructure automation, cloud operations, incident command, and team leadership.</p></div><div class="timeline"><article class="timeline-card"><div class="timeline-top"><div><span class="role">Comcast / FreeWheel</span><h3>Engineer 3 — Site Reliability Engineer</h3></div><div class="timeline-meta">2024 — Present</div></div><p>Supporting Comcast FreeWheel's premium AdTech platform with responsibility for mission-critical ad-serving availability, live-event readiness, AWS and Kubernetes operations, governance, release execution, and reliability improvement.</p><ul class="bullet-list" style="margin-top: var(--space-5);"><li>Supported major live events including the Olympics, FIFA World Cup, and March Madness with proactive monitoring and capacity planning.</li><li>Managed AWS infrastructure, Kubernetes production clusters, deployments, rollbacks, hotfixes, and CI/CD-driven release workflows.</li><li>Drove tagging, cost optimization, security compliance, Terraform maintenance, and contributions to chaos engineering initiatives.</li></ul></article><article class="timeline-card"><div class="timeline-top"><div><span class="role">iOPEX Technologies · Client: Netskope</span><h3>Senior Systems Engineer → Shift Lead · Site Reliability Engineer</h3></div><div class="timeline-meta">2022 — 2024</div></div><p>Owned infrastructure and application reliability for Netskope Introspection, a cloud security platform performing API-driven content scanning, DLP, and risk analysis across enterprise SaaS environments.</p><ul class="bullet-list" style="margin-top: var(--space-5);"><li>Executed deployments, upgrades, maintenance, patching, and automation using Python and Bash.</li><li>Managed Kubernetes, Docker, Redis, Kafka, and MongoDB production workloads across multiple environments.</li><li>Led incident management, SLA-bound troubleshooting, post-incident reviews, on-call operations through Opsgenie, and shift-level coordination.</li></ul></article><article class="timeline-card"><div class="timeline-top"><div><span class="role">Tata Consultancy Services · Client: HP Inc.</span><h3>Assistant System Engineer Trainee → System Engineer · Production Support Engineer</h3></div><div class="timeline-meta">2019 — 2022</div></div><p>Maintained stability and availability for HP's global B2C e-commerce platform, supporting infrastructure changes, deployments, migrations, and business-critical seasonal traffic events.</p><ul class="bullet-list" style="margin-top: var(--space-5);"><li>Handled production monitoring, incident resolution, OS patching, server migration, deployments, and service continuity work.</li><li>Supported high-volume promotional periods while preserving platform stability and response standards.</li><li>Automated repetitive operational tasks and partnered with cross-functional teams on RCA and operational efficiency improvements.</li></ul></article></div></section>
+    <section class="section reveal" id="skills"><div class="section-head"><div><div class="section-kicker">Capability stack</div><h2>Technical skills</h2></div><p>Balanced across cloud, infrastructure, automation, runtime operations, observability, and cross-functional production support.</p></div><div class="skills-grid"><article class="skill-group"><h3>Cloud & infrastructure</h3><ul class="skill-list"><li>AWS, OCI, Azure, GCP</li><li>Linux: RHEL, Amazon Linux, Ubuntu</li><li>Terraform, Ansible, cloud governance</li><li>High availability, scalability, cost optimization</li></ul></article><article class="skill-group"><h3>Platform engineering</h3><ul class="skill-list"><li>Kubernetes and Docker</li><li>Jenkins, Git, CI/CD pipelines</li><li>Python 3.x and Bash automation</li><li>Infrastructure as Code and release engineering</li></ul></article><article class="skill-group"><h3>Data & messaging</h3><ul class="skill-list"><li>Oracle SQL, MongoDB, Redis</li><li>Apache Kafka</li><li>Performance troubleshooting and operational support</li><li>Production-grade maintenance and upgrades</li></ul></article><article class="skill-group"><h3>Reliability & operations</h3><ul class="skill-list"><li>Grafana, New Relic, Splunk</li><li>JIRA, ServiceNow, Opsgenie</li><li>Incident management, RCA, production support</li><li>Observability, capacity planning, chaos engineering</li></ul></article></div></section>
+    <section class="section reveal" id="project"><div class="section-head"><div><div class="section-kicker">Featured project</div><h2>RIS — Reliability Intelligence System</h2></div><p>An agentic AI-driven platform concept for infrastructure monitoring, incident diagnosis, remediation, and self-healing operations built around production reliability use cases.</p></div><article class="project-card"><div><span class="project-label">Agentic AI · Monitoring · Self-healing</span><h3>Reliability operations with diagnosis and action built in.</h3><p style="margin-top: var(--space-4);">RIS was designed to automate infrastructure monitoring, intelligent incident detection, log analysis, root cause identification, knowledge retrieval, and remediation workflows, reducing manual triage effort and improving mean time to resolution.</p></div><div class="chips" style="align-content: start;"><span class="chip">AI-driven monitoring</span><span class="chip">Incident detection</span><span class="chip">Automated log analysis</span><span class="chip">Root cause identification</span><span class="chip">Troubleshooting knowledge retrieval</span><span class="chip">Automated remediation</span><span class="chip">Self-healing workflows</span><span class="chip">MTTR improvement</span></div></article></section>
+    <section class="section reveal" id="certifications"><div class="section-head"><div><div class="section-kicker">Learning & validation</div><h2>Certifications</h2></div><p>Continuous upskilling across cloud architecture, automation, scripting, containers, and AdTech domain knowledge.</p></div><div class="cert-grid"><article class="cert-card"><h3>Cloud</h3><ul class="skill-list"><li>AWS Solution Architect Professional — In Progress</li><li>OCI Architect Associate</li><li>Microsoft Azure Fundamentals</li></ul></article><article class="cert-card"><h3>DevOps & automation</h3><ul class="skill-list"><li>Kubernetes & Docker</li><li>Bash Scripting & Shell Programming</li><li>Python Zero to Master</li><li>Manage AWS using Python (Boto3): Core Services</li><li>Web Scraping & API Fundamentals in Python</li></ul></article><article class="cert-card"><h3>AdTech Academy</h3><ul class="skill-list"><li>Brand Safety, Campaign Management, Cookies</li><li>Identity, key regulations, and AdTech terminology</li><li>OpenRTB, Prebid, and Supply Chain concepts</li></ul></article><article class="cert-card"><h3>Framework exposure</h3><ul class="skill-list"><li>Basic Flask, HTML, CSS</li><li>Tkinter and Kivy exposure</li><li>Useful for internal tooling and lightweight interfaces</li></ul></article></div></section>
+    <section class="section reveal" id="recognition"><div class="section-head"><div><div class="section-kicker">Recognition</div><h2>Awards & recognitions</h2></div><p>Recognition across each stage of the career for delivery, ownership, performance, and operational impact.</p></div><div class="award-strip"><article><h3>Comcast</h3><ul class="skill-list"><li>Pinnacle Award</li><li>HiFi Award</li></ul></article><article><h3>iOPEX Technologies</h3><ul class="skill-list"><li>Star of the Month — 3 times</li></ul></article><article><h3>Tata Consultancy Services</h3><ul class="skill-list"><li>On-the-Spot Award — 3 times</li><li>Star Team Award</li></ul></article></div></section>
+    <section class="section reveal" id="education"><div class="section-head"><div><div class="section-kicker">Academic foundation</div><h2>Education</h2></div><p>A strong academic base backed by consistent performance through engineering and school education.</p></div><div class="education-grid"><article class="edu-card"><h3>B.Tech — Electrical & Electronics Engineering</h3><p style="color: var(--color-text);">Sri Manakula Vinayagar Engineering College</p><p style="margin-top: var(--space-2);">CGPA: 8.3 / 10 · 2015 — 2019</p></article><article class="edu-card"><h3>Higher Secondary Certificate</h3><p style="color: var(--color-text);">New Modern Vidhya Mandir Higher Secondary School</p><p style="margin-top: var(--space-2);">Score: 89.08% · 2014 — 2015</p></article><article class="edu-card" style="grid-column: 1 / -1;"><h3>Secondary School Leaving Certificate</h3><p style="color: var(--color-text);">New Modern Vidhya Mandir Higher Secondary School</p><p style="margin-top: var(--space-2);">Score: 92.2% · 2012 — 2013</p></article></div></section>
   </main>
-
-  <footer class="footer shell">
-  </footer>
-
+  <footer class="footer shell"></footer>
   <script>
     (function () {
       const root = document.documentElement;
       const toggle = document.querySelector('[data-theme-toggle]');
       let current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       root.setAttribute('data-theme', current);
-
       const setIcon = () => {
         toggle.innerHTML = current === 'dark'
           ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path></svg>'
           : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3c-.1.6-.15 1.22-.15 1.84A9 9 0 0 0 21 12.79Z"></path></svg>';
         toggle.setAttribute('aria-label', current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
       };
-
       setIcon();
       toggle.addEventListener('click', function () {
         current = current === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', current);
         setIcon();
       });
-
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
@@ -957,7 +281,6 @@
             }
           });
         }, { threshold: 0.12 });
-
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
       } else {
         document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
